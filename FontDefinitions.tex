@@ -1,0 +1,61 @@
+% Schriftdefinitionen
+\ifxetex
+\usepackage{xunicode}
+\fi
+
+\ifpdftex
+\else
+    \usepackage{fontspec}
+\fi
+
+\providecommand{\fonttype}{libertinus}
+
+\ifthenelse{\equal{\fonttype}{basel}}
+{
+    \setmainfont[
+        Path                = \mainpath/includes/fonts/,
+        Extension           = .ttf,
+        UprightFont         = *_Normal,
+        BoldFont            = *_Bold,
+        ItalicFont          = *_Italic,
+        BoldItalicFont      = *_BoldItalic,
+        %
+        SmallCapsFeatures   = {Letters=SmallCaps},
+        %Mapping             = tex-text,
+        Ligatures           = TeX
+    ]{BaselBook}
+
+    \newcommand\FontName{Basel Book\xspace}
+    \typeout{ **** Use BaselBook ***}
+}{}
+
+\ifthenelse{\equal{\fonttype}{libertine}}
+{
+    \setmainfont[
+        Path                = \mainpath/includes/fonts/LinuxLibertine/,
+        Extension           = .ttf,
+        UprightFont         = *_R_G,
+        BoldFont            = *_RB_G,
+        ItalicFont          = *_RI_G,
+        BoldItalicFont      = *_RBI_G,
+        %
+        SmallCapsFeatures   = {Letters=SmallCaps},
+        %Mapping             = tex-text,  not for luatex
+        Ligatures           = TeX
+    ]{LinLibertine}
+
+    \newcommand\FontName{Linux Libertine\xspace}
+    \typeout{ **** Use LinuxLibertine ***}
+}{}
+
+\ifthenelse{\equal{\fonttype}{libertinus}}
+{
+    \usepackage{libertinus-otf}
+    \setmainfont{Libertinus Serif}
+    \setsansfont{Libertinus Sans}
+    %\setmathfont{Libertinus Math}
+    \newcommand\FontName{Libertinus\xspace}
+    \typeout{ **** Use Libertinus ***}
+}{}
+
+\defaultfontfeatures{Scale=MatchLowercase}

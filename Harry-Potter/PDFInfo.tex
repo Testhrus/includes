@@ -1,0 +1,39 @@
+% PDF information
+\usepackage{pdfsync}
+\usepackage{xcolor}
+\usepackage[unicode]{hyperref}
+
+\definecolor{Linkgrau}{rgb}{0.5, 0.5, 0.5}
+
+\providecommand{\pdfcreationdef}{D:00010101010101}
+\providecommand{\pdfkeywordsdef}{}
+\providecommand{\authordef}{unknown author}
+\providecommand{\titledef}{no title}
+\providecommand{\fictiontype}{no genre}
+
+\hypersetup{
+	pdfcreationdate={\pdfcreationdef},
+	pdftitle={\fictiontype - \titledef},
+	pdfauthor={\authordef},
+	pdfkeywords={\fictiontype, fanfic, fan-fic, Geschichte, \pdfkeywordsdef},
+	colorlinks=true,
+	urlcolor=Linkgrau,		% \href{...}{...} external (URL)
+	filecolor=Linkgrau,		% \href{...} local file
+	linkcolor=Linkgrau,		% \ref{...} and \pageref{...}
+	breaklinks=true,
+	plainpages=false,
+	pdfpagelayout=OneColumn,
+	unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+	bookmarksnumbered=true,
+	bookmarksopen=true,
+	pdfstartview=FitH,    % fits the width of the page to the window
+	pdfencoding=auto,
+	pdfsubject={},
+	%citecolor=green,     % color of links to bibliography
+	%pdfproducer={pdfLaTeX},
+	%pdfpagelayout=TwoPageRight,	% nur zum Beatrachten des layouts (je nach Dokument dort speziell einschalten)
+	%bookmarks=true,         % show bookmarks bar?
+	%pdffitwindow=false,     % window fit to page when opened
+	%pdfnewwindow=true,      % links in new window
+	%pdfcreator={Creator},   % creator of the document
+}

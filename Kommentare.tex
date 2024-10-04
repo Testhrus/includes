@@ -1,0 +1,39 @@
+\usepackage{verbatim}
+
+\makeatletter
+\newcounter{exercise}[chapter]
+
+% Datei zum Schreiben oeffnen:
+\newwrite\ex@file
+\immediate\openout\ex@file=\jobname.kommentar
+
+% Wird bei \begin{kommentar} ausgefuehrt:
+\newcommand*{\kommentar}{\@bsphack
+\let\do\@makeother\dospecials
+\catcode`\^^M\active
+\def\verbatim@processline{%
+\immediate\write\ex@file{\the\verbatim@line}}%
+\stepcounter{exercise}%
+\immediate\write\ex@file{%
+\string\begin{ex@kommentar}{\thechapter.\theexercise}}%
+\verbatim@start}
+
+% Wird bei \end{kommentar} ausgefuehrt:
+\def\endkommentar{%
+\immediate\write\ex@file{%
+\string\end{ex@kommentar}}\@esphack}
+
+
+% Umgebung definieren, wie die Kommentare formatiert werden sollen
+	\newenvironment{ex@kommentar}[1]{\paragraph{#1}}{}
+
+% Dieser Befehl listet die Kommentare auf
+  \newcommand*{\includekommentare}{%
+  \immediate\closeout\ex@file%
+  \@ifundefined{chapter}%
+  {\let\@tempa\section}%
+  {\let\@tempa\chapter}
+  \@tempa{Kommentare}
+  \InputIfFileExists{\jobname.kommentar}{}{}}
+
+\makeatother

@@ -1,0 +1,13 @@
+\ifxetex
+ \newcommand{\latexdist}{\XeLaTeX}
+\fi
+
+\ifluatex
+ \newcommand{\latexdist}{\LuaLaTeX}
+\fi
+
+\ifpdftex
+ \newcommand{\latexdist}{\PdfLaTeX}
+\fi
+
+\providecommand{\latexdist}{unknown}

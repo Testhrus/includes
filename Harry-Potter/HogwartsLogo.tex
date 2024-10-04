@@ -1,0 +1,18 @@
+% >standard<, color, gray
+\providecommand{\hogwartslogo}{standard}
+
+
+\ifthenelse{\equal{\hogwartslogo}{standard}}
+{
+    \newcommand{\titleimage}{\includegraphics[scale=0.3]{\mainpath/includes/images/Harry-Potter/figure_hogwarts_shield_gray.png}}
+}{}
+
+\ifthenelse{\equal{\hogwartslogo}{color}}
+{
+    \newcommand{\titleimage}{\includegraphics[scale=0.28]{\mainpath/includes/images/Harry-Potter/figure_hogwarts_shield_color_new.png}}
+}{}
+
+\ifthenelse{\equal{\hogwartslogo}{gray}}
+{
+    \newcommand{\titleimage}{\includegraphics[scale=0.28]{\mainpath/includes/images/Harry-Potter/figure_hogwarts_shield_gray_new.png}}
+}{}

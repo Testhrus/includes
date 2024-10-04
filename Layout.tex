@@ -1,0 +1,52 @@
+\usepackage{zahl2string}        % Kapitel Eins
+\usepackage{fmtcount}           % Chapter One
+\usepackage{scrlayer-scrpage}   % z.B. \pagestyle, \ohead, …
+
+\providecommand{\papertype}{dina5}
+\providecommand{\chapterword}{\iflanguage{german}{\Numstring{chapter}}{\iflanguage{ngerman}{\Numstring{chapter}}{\Numberstring{chapter}}}}
+
+\KOMAoption{chapterprefix}{true}
+\renewcommand*\raggedchapter{\centering}
+\newcommand*\chaptertitleformat[1]{#1}
+\setkomafont{chapterprefix}{\rmfamily\Large\normalshape\mdseries} %% Formatierung: - Kapitel Eins -
+\setkomafont{chapter}{\rmfamily\Huge\itshape\bfseries} %% Formatierung: <Kapitelname>
+
+\ifthenelse{\equal{\papertype}{dina5}}
+{
+    \renewcommand*{\chapterformat}{ \vspace*{-12.5mm} – \scshape \chaptername\ \chapterword – }
+    \renewcommand*{\chapterheadendvskip}{\vspace*{14.7mm}}
+}{}
+
+\ifthenelse{\equal{\papertype}{science}}
+{
+    \renewcommand*{\chapterformat}{ \vspace*{-12.5mm} – \scshape \chaptername\ \chapterword – }
+    \renewcommand*{\chapterheadendvskip}{\vspace*{14.7mm}}
+}{}
+
+\ifthenelse{\equal{\papertype}{dina4}}
+{
+    \renewcommand*{\chapterformat}{ – \scshape \chaptername\ \chapterword – }
+}{}
+
+% Aussehen der Seiten (Kapitel- und Textseiten)
+\renewcommand*{\partpagestyle}{empty} % Keine Seitenzahl auf der Seite mit \part
+\renewcommand*{\chapterpagestyle}{empty} % Keine Seitenzahl auf der Seite mit \chapter
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}} % verhindert, dass auf der Kapitelnamenseite davor 'Kapitel 1 -' steht
+% Schriftart und -aussehen
+\addtokomafont{section}{\normalfont\large\bfseries\centering}
+\addtokomafont{subsection}{\normalfont\bfseries\centering}
+\setkomafont{pageheadfoot}{\normalfont\scshape}
+\pagestyle{scrheadings}
+% Wo stehen Seitenzahlen und andere Markierungen auf der Seite
+\ohead{\pagemark} % Seitenzahlen oben außen
+\ofoot{} % nichts unten außen
+\cehead{Harry Potter} % bei geraden Seiten in der Mitte diesen Text schreiben
+\cohead{\leftmark} % bei ungeraden Seiten in der Mitte Kapitelname
+
+%\ihead{ihead}
+%\chead{chead}
+%\ohead{ohead}
+
+%\ifoot{ifoot}
+%\cfoot{cfoot}
+%\ofoot{ofoot}
