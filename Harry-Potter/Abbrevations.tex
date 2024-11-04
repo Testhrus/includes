@@ -1,14 +1,33 @@
 % Harry Potter Abkürzungen
-%%                                Achtung: Nach \skipspace kommt Alt+255 (am Anfang und am Ende)
-\providecommand{\doIndentAndFloppy}[1]{\skipspace \vspace*{-0.25ex}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft}\textit{#1}\end{FlushLeft}\end{addmargin}\skipspace \vspace*{-0.2ex}}
 
-\newenvironment{briefu}{\skipspace \vspace*{-0.25ex}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft} \itshape}{\end{FlushLeft}\end{addmargin}\skipspace \vspace*{-0.2ex}}
-\newenvironment{liedu}{\skipspace \vspace*{-0.25ex}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft} \itshape}{\end{FlushLeft}\end{addmargin}\skipspace \vspace*{-0.2ex}}
-\newenvironment{rueckblicku}{\skipspace \vspace*{-0.25ex}\itshape}{\skipspace \vspace*{-0.2ex}}
+% Links und Rechts vom Rand einrücken und kein Blocksatz
+% \newenvironment{brief}     {\skipspace\vspace{\baselineskip}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft} \itshape}
+%     {\end{FlushLeft}\end{addmargin}\skipspace\vspace{\baselineskip}}
+% \newenvironment{buch}      {\skipspace\vspace{\baselineskip}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft} \itshape}
+%     {\end{FlushLeft}\end{addmargin}\skipspace\vspace{\baselineskip}}
+% \newenvironment{lied}      {\skipspace\vspace{\baselineskip}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft} \itshape}
+%     {\end{FlushLeft}\end{addmargin}\skipspace\vspace{\baselineskip}}
 
-\newcommand{\ps}            [1] {\skipspace #1\\}
-\newcommand{\addressingspace}   {\\ \\} % Achtung! Alt+255
-\newcommand{\signumspace}       {\\ \\} % Achtung! Alt+255
+% \newenvironment{traum}     {\skipspace\vspace{\baselineskip}\itshape}{\vspace{\baselineskip}\skipspace}
+% \newenvironment{rueckblick}{\skipspace\vspace{\baselineskip}\itshape}{\vspace{\baselineskip}\skipspace}
+
+\newenvironment{brief}     {\vspace{\baselineskip}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft}\itshape}
+                                {\end{FlushLeft}\end{addmargin}\skipspace\vspace{\baselineskip}}
+\newenvironment{buch}      {\vspace{\baselineskip}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft}\itshape}
+                                {\end{FlushLeft}\end{addmargin}\skipspace\vspace{\baselineskip}}
+\newenvironment{lied}      {\vspace{\baselineskip}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft}\itshape}
+                                {\end{FlushLeft}\end{addmargin}\skipspace\vspace{\baselineskip}}
+
+\newenvironment{traum}     {\vspace{\baselineskip}\itshape}{\skipspace\vspace{\baselineskip}}
+\newenvironment{rueckblick}{\vspace{\baselineskip}\itshape}{\skipspace\vspace{\baselineskip}}
+
+\newenvironment{rolle}{\sfshape}{}
+
+
+
+\newcommand{\ps}[1]{\skipspace #1\\}
+\newcommand{\addressingspace}{\\ \\} % Achtung! Alt+255
+\newcommand{\signumspace}{\\ \\} % Achtung! Alt+255
 
 \newcommand{\fahrendeRitter}{\textit{Fahrende Ritter}}
 \newcommand{\fahrenderRitter}{\textit{Fahrender Ritter}}
@@ -16,50 +35,37 @@
 
 \newcommand{\gleis}{9~\nicefrac{3}{4}\xspace}
 \newcommand{\neundreiviertel}{9~\nicefrac{3}{4}\xspace}
-
-\newcommand{\timeline}            [1] {\begin{center}\textit{#1}\end{center}\skipspace}
-
-\newcommand{\kapitelvorwort}      [1] {\skipspace\begin{center}\footnotesize\textit{#1}\end{center}\skipspace}
-\newcommand{\centerblock}         [1] {\skipspace\begin{center}\textsc{#1}\end{center}\skipspace}
-\newcommand{\angriffmark}         [1] {\skipspace\begin{flushleft}\textit{#1}\end{flushleft}\skipspace}
-\newcommand{\lied}                [1] {\skipspace\begin{flushleft}\textit{#1}\end{flushleft}\skipspace}
-
-\newcommand{\widmung}             [1] {\doIndentAndFloppy{#1}}
-\newcommand{\gedicht}             [1] {\doIndentAndFloppy{#1}}
-\newcommand{\danke}               [1] {\doIndentAndFloppy{#1}}
-\newcommand{\buchabschnitt}       [1] {\doIndentAndFloppy{#1}}
-\newcommand{\fernseher}           [1] {\doIndentAndFloppy{#1}}
-\newcommand{\anschlag}            [1] {\doIndentAndFloppy{#1}}
-\newcommand{\note}                [1] {\doIndentAndFloppy{#1}}
-\newcommand{\phiole}              [1] {\doIndentAndFloppy{#1}}
-\newcommand{\brief}               [1] {\doIndentAndFloppy{#1}}
-
-\newcommand{\zeitung}             [1] {\skipspace\begin{quote}#1\end{quote}\skipspace}
-\newcommand{\zeitungname}         [1] {\textit{#1}}
-\newcommand{\headline}            [1] {\textsc{#1}}
-\newcommand{\phioleschrift}       [1] {\textit{#1}}
-\newcommand{\benotung}            [1] {\textit{#1}}
-\newcommand{\parsel}              [1] {\textit{>>#1<<\xspace}}
-\newcommand{\meerisch}            [1] {\textit{<<#1>>\xspace}}
-\newcommand{\einfluss}            [1] {\enquote{\textsc{#1}}}
-\newcommand{\muenze}              [1] {‚#1{}‘}
-\newcommand{\letter}              [1] {‚#1{}‘}
-
-\newcommand{\introduction}        [1]{\skipspace\begin{center}\small #1\end{center}\skipspace}
-\newcommand{\rolle}               [1]{\textsf{#1}}
-\newcommand{\mitte}               [1]{\begin{center}\textit{#1}\end{center}}
-\newcommand{\unterrichtsfach}     [1]{\textit{#1}}
+%\newcommand{\timeline}            [1]{\begin{center}\textit{#1}\end{center}\skipspace}
+\newcommand{\kapitelvorwort}      [1]{\skipspace\begin{center}\footnotesize\textit{#1}\end{center}\skipspace}
+%\newcommand{\centerblock}         [1]{\skipspace\begin{center}\textsc{#1}\end{center}\skipspace}
+\newcommand{\note}                [1]{\textit{#1}}
+\newcommand{\parsel}              [1]{\textit{>>#1<<\xspace}}
+\newcommand{\koboldgack}          [1]{\textit{‛#1’\xspace}}
+\newcommand{\meerisch}            [1]{\textit{<<#1>>\xspace}}
+\newcommand{\mensch}[1]{} % do nothing here, because of another command for output in an other language. This here is for transformation in Html with own tool
+%\newcommand{\einfluss}            [1]{\enquote{\textsc{#1}}}
+\newcommand{\muenze}              [1]{‚#1{}‘}
 \newcommand{\fach}                [1]{\textit{#1}}
-\newcommand{\buch}                [1]{\textit{#1}}
-\newcommand{\nachrichten}         [1]{\textit{#1}}
-\newcommand{\nachrichtensprecher} [1]{\enquote{\textit{#1}}}
-
+\newcommand{\buchtitel}           [1]{\textit{#1}}
 \newcommand{\liedinline}          [1]{\textit{#1}}
 \newcommand{\spruch}              [1]{\textit{#1}}
 \newcommand{\zauber}              [1]{\enquote{\textit{#1}}}
 \newcommand{\zauberextase}        [1]{\enquote{\textit{\textsc{#1}}}}
+\newcommand{\trank}               [1]{\textit{#1}}
 
 \newcommand{\fab}{Florish \& Blotts\xspace}
 \newcommand{\schnatz}{Schnatz\xspace}
 
-\newcommand{\VgddK}{\unterrichtsfach{Verteidigung gegen die dunklen Künste}\xspace}
+\newcommand{\VgddK}{\fach{Verteidigung gegen die dunklen Künste}\xspace}
+\newcommand{\DKuV}{\fach{Dunkle Künste und Verteidigung dagegen}\xspace}
+
+\newcommand{\nachrichten}         [1]{\textit{#1}}
+\newcommand{\zeitungname}         [1]{\textit{#1}}
+\newcommand{\zeitung}             [1]{\skipspace\begin{quote}#1\end{quote}\skipspace}
+
+%\newcommand{\nachrichtensprecher} [1]{\enquote{\textit{#1}}}
+%\newcommand{\letter}              [1]{‚#1{}‘}
+%\newcommand{\rolle}               [1]{\textsf{#1}}
+%\newcommand{\mitte}               [1]{\begin{center}\textit{#1}\end{center}}
+%\newcommand{\unterrichtsfach}     [1]{\textit{#1}}
+%\newcommand{\headline}            [1]{\textsc{#1}}

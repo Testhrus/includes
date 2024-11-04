@@ -1,15 +1,38 @@
 % PDF information
 \usepackage{pdfsync}
-\usepackage{xcolor}
-\usepackage[unicode]{hyperref}
-
-\definecolor{Linkgrau}{rgb}{0.5, 0.5, 0.5}
 
 \providecommand{\pdfcreationdef}{D:00010101010101}
 \providecommand{\pdfkeywordsdef}{}
 \providecommand{\authordef}{unknown author}
 \providecommand{\titledef}{no title}
 \providecommand{\fictiontype}{no genre}
+\providecommand{\fictionlanguage}{de-DE}
+\providecommand{\usepdf}{standard}
+
+
+
+\ifthenelse{\equal{\usepdf}{standard}}
+{
+    \usepackage{xcolor}
+    \usepackage[unicode]{hyperref}
+}{}
+
+\ifthenelse{\equal{\usepdf}{pdfa}}
+{
+    \begin{filecontents*}[overwrite]{\jobname.xmpdata}
+        \Title{\fictiontype - \titledef}
+        \Author{\authordef}
+        \Subject{}
+        \Language{\fictionlanguage}
+        \Keywords{\fictiontype, fanfic, fan-fic, Geschichte, \pdfkeywordsdef}
+        \Date{\pdfcreationdef}
+    \end{filecontents*}
+
+   \usepackage[a-3u]{pdfx}
+}{}
+
+\definecolor{Linkgrau}{rgb}{0.5, 0.5, 0.5}
+
 
 \hypersetup{
 	pdfcreationdate={\pdfcreationdef},

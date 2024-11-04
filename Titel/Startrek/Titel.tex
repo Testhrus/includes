@@ -1,46 +1,120 @@
-\thispagestyle{empty}
-{
-	\vspace*{0.2\textheight}
+\setlength\parindent{0pt}
 
-	\ifbook
-		\hfill \huge STAR\hspace{2mm}
+% Standardverhalten, falls eine Kommando nicht definiert wurde
+\providecommand{\printingcompany}{undefined}
+\providecommand{\engine}{\latexdist}
+\providecommand{\titleimage}{\includegraphics[scale=0.3]{\mainpath/includes/images/Harry-Potter/figure_hogwarts_shield_gray.png}}
+\providecommand{\titledef}{no title}
 
-		\vspace*{8mm}
-		
-		\hfill TREK
-	\else
-		\hfill \huge STAR\hspace{22mm}
-		
-		\vspace*{8mm}
-		
-		\hfill TREK\hspace{20mm}
-	\fi
-}
+\begin{titlepage}
 
-\cleardoublepage
-\thispagestyle{empty}
+    \thispagestyle{empty}
+    {
+        \vspace*{0.2\textheight}
 
-\ifbook
-	\vspace*{1cm}
-\else
-	\vspace*{5,2cm}
-\fi
+        \ifdefined\papertype
+        \else
+            \newcommand{\papertype}{dina5}
+        \fi
 
-\begin{center}
-	{\Huge STAR TREK}\\
-	\vspace{2mm}
-	\large{\textit{\titledef}}\\
-	\vspace{3mm}
-	\begin{figure}[h]
-		\centering
-			\includegraphics[scale=0.3]{\imagedef}
-	\end{figure}
-	\vspace{2mm}
-	\large{\authordef}\\
-	\normalsize
-	\yeardef\\
+        \ifthenelse{\equal{\papertype}{dina5}}
+        {\hfill \huge STAR\hspace{2mm}
 
-\end{center}
+                \vspace*{5.5mm}
 
-\newpage
+            \hfill TREK\vspace{-2mm}
+        }{}
 
+        \ifthenelse{\equal{\papertype}{science}}
+        {\hfill \huge STAR\hspace{2mm}
+
+                \vspace*{5.2mm}
+
+            \hfill TREK\vspace{-2mm}
+        }{}
+
+        \ifthenelse{\equal{\papertype}{dina4}}
+        {\hfill \huge STAR\hspace{22mm}
+
+                \vspace*{8mm}
+
+        \hfill TREK\hspace{18.2mm}
+        }{}
+    }
+
+    \cleardoublepage
+    \thispagestyle{empty}
+
+    \ifthenelse{\equal{\papertype}{dina5}}    {	\vspace*{1cm}   }{}
+    \ifthenelse{\equal{\papertype}{science}}  {	\vspace*{1cm}   }{}
+    \ifthenelse{\equal{\papertype}{dina4}}    {	\vspace*{5,2cm} }{}
+
+
+    \begin{center}
+        {\Huge STAR TREK}\\
+        \vspace{2mm}
+        \large{\textit{\titledef}}\\
+        \vspace{3mm}
+        \begin{figure}[h]
+            \centering
+        \end{figure}
+        \vspace{2mm}
+        \large{\authordef}\\
+        \normalsize
+        \yeardef\\
+    \end{center}
+
+
+    \newpage
+
+
+    \begin{center}
+        \textbf{\titledef}
+        \thispagestyle{empty}
+        \vspace{4mm}
+    \end{center}
+
+    \ifdefined\additionalsdef
+            \additionalsdef
+    \fi
+
+    \typesetting{
+        \iflanguage{german}{Dieses Buch wurde mit \engine\xspace und der \FontName-Schriftfamilie erstellt.}
+        {
+            \iflanguage{ngerman}
+                    {Dieses Buch wurde mit \engine\xspace und der \FontName-Schriftfamilie erstellt.}
+                    {This book was created with \engine\xspace and the \FontName-Font family.}
+        }
+    }
+
+    \vfill
+
+    \ifdefined\firstpublished
+            \scriptsize{\firstpublished}
+    \fi
+
+    % 1. Ausgabe 2013
+    \ifdefined\published
+            \scriptsize{\published}
+    \fi
+
+    Copyright \yeardef\ by \authordef
+    \vspace*{1em}
+
+% Printing companies START
+    \ifthenelse{\equal{\printingcompany}{undefined}} {}{}
+
+    \ifthenelse{\equal{\printingcompany}{epubli}} {
+    printed by \href{https://www.epubli.de}{epubli GmbH, Berlin}\footnote{https://www.epubli.de}
+    }{}
+
+    \ifthenelse{\equal{\printingcompany}{1buch}} {
+    printed by \href{https://www.1buch.de}{1Buch GmbH, Gütersloh}\footnote{https://www.1buch.de}
+    }{}
+
+    \ifthenelse{\equal{\printingcompany}{podbuchdruck}} {
+    printed by \href{https://www.podbuchdruck.de}{PodBuchdruck, Trier}\footnote{https://www.podbuchdruck.de}
+    }{}
+% Printing companies END
+
+\end{titlepage}

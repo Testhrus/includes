@@ -28,9 +28,10 @@
 \newcommand{\xell}{…\xspace} % Ellipse
 
 \newcommand{\gst}{\unskip~—\xspace} % deutscher Gedankenstrich Alt+0151
-\newcommand{\gste}{\unskip~―\xspace} % englischer Gedankenstrich Alt+2015
 \newcommand{\agst}{\unskip—\xspace} % deutscher Gedankenstrich Alt+0151
-\newcommand{\agste}{\unskip―\xspace} % englischer Gedankenstrich Alt+2015
+
+%\newcommand{\gste}{\unskip~―\xspace} % englischer Gedankenstrich Alt+2015
+%\newcommand{\agste}{\unskip―\xspace} % englischer Gedankenstrich Alt+2015
 
 
 \newcommand{\dreiviertel}{\unskip~\nicefrac{3}{4}\xspace}
@@ -45,32 +46,26 @@
 \newcommand{\trenn}{\skipspace\begin{center}• • • • •\end{center}\skipspace}
 \newcommand{\ooo}{\begin{center}$\sim$o0o$\sim$\end{center}}
 
-\newcommand{\innerenquote}    [1] {\enquote{#1}}
 \newcommand{\inner}           [1] {\enquote{#1}}
 \newcommand{\rede}            [1] {>>#1<<\xspace}
 \newcommand{\en}              [1]{\enquote{#1}}
 
-\newcommand{\nochwas}{\vspace*{2em} ... noch was ... \vspace*{2em}}
-\newcommand{\umbr}{\%}
-\newcommand{\nlig}{\/}
+%\newcommand{\nochwas}{\vspace*{2em} ... noch was ... \vspace*{2em}}
 
+\newcommand{\accentuate}    [1] {\textit{#1}}
 
 \newcommand{\fluestern}     [1] {\enquote{#1}}
 \newcommand{\murmeln}       [1] {\enquote{#1}}
-\newcommand{\accentuate}    [1] {\textit{#1}}
 \newcommand{\stimme}        [1] {\textit{<<#1>>\xspace}}
-\newcommand{\innerstimme}        [1] {\textit{<#1>\xspace}}
+\newcommand{\innerstimme}   [1] {\textit{<#1>\xspace}}
 \newcommand{\unterbewusst}  [1] {\textit{>>#1<<\xspace}}
-\newcommand{\extase}       [1]{\textsc{#1}}
-\newcommand{\block}        [1]{\textsc{#1}}
-\newcommand{\schreien}       [1]{\enquote{\textsc{#1}}}
-\newcommand{\gedanke}         [1]{\textit{#1}}
-\newcommand{\erinnerung}      [1]{\textit{#1}}
-\newcommand{\geraeusch}       [1]{\textit{#1}}
-\newenvironment{traume}{\skipspace\itshape}{\skipspace}
+\newcommand{\extase}        [1]{\textsc{#1}}
+\newcommand{\block}         [1]{\textsc{#1}}
+\newcommand{\schreien}      [1]{\enquote{\textsc{#1}}}
+\newcommand{\gedanke}       [1]{\textit{#1}}
+\newcommand{\erinnerung}    [1]{\textit{#1}}
+\newcommand{\geraeusch}     [1]{\textit{#1}}
+\newcommand{\gebaerde}      [1]{\textit{#1}}
+
 \newenvironment{mittig}{\begin{center}\itshape}{\end{center}}
-
-
-\newcommand{\traum}           [1]{\skipspace\textit{#1}\skipspace}
-\newcommand{\rueckblick}      [1]{\skipspace\textit{#1}\skipspace}
-\newcommand{\gebaerde}        [1]{\textit{#1}}
+\newenvironment{centered-block}{\skipspace\vspace{\baselineskip}\begin{addmargin}[1.5em]{1.5em}\scshape}{\end{addmargin}\vspace{\baselineskip}\skipspace}

@@ -8,23 +8,23 @@
 
 \usepackage{xifthen}
 
-\ifthenelse{\equal{\papertype}{dina5}}    {	\newcommand{\online}[1]{}   }{} % Version für Buchdruck
-\ifthenelse{\equal{\papertype}{science}}  {	\newcommand{\online}[1]{}   }{} % Version für Buchdruck
-\ifthenelse{\equal{\papertype}{dina4}}    {	\newcommand{\online}[1]{#1} }{} % Version für Online-Vertrieb
+\ifthenelse{\equal{\papertype}{dina5}}{\newcommand{\online}[1]{}}{} % Version für Buchdruck
+\ifthenelse{\equal{\papertype}{science}}{\newcommand{\online}[1]{}}{} % Version für Buchdruck
+\ifthenelse{\equal{\papertype}{dina4}}{\newcommand{\online}[1]{#1}}{} % Version für Online-Vertrieb
 
 \ifthenelse{\equal{\pageborder}{cutting3mm}}
 {
     \ifthenelse{\equal{\papertype}{dina5}}    {	\usepackage[paperwidth=154mm, paperheight=216mm, inner=1.9cm, outer=1.7cm, top=1.9cm, bottom=1.7cm]{geometry} }{}
     \ifthenelse{\equal{\papertype}{science}}  {	\usepackage[paperwidth=176mm, paperheight=246mm, inner=2.1cm, outer=1.9cm, top=1.9cm, bottom=1.7cm]{geometry} }{}
     \ifthenelse{\equal{\papertype}{dina4}}    {	\usepackage[paperwidth=216mm, paperheight=303mm, inner=2.4cm, outer=1.2cm, top=1.9cm, bottom=1.3cm]{geometry} }{}
-    \geometry{dvips=false,pdftex=false,vtex=false, marginparsep=0mm} %, showframe}
+    \geometry{dvips=false,pdftex=false,vtex=false, marginparsep=0mm}
 }{}
 \ifthenelse{\equal{\pageborder}{visibleborder}}
 {
     \ifthenelse{\equal{\papertype}{dina5}}    {	\usepackage[paperwidth=148mm, paperheight=210mm, inner=1.6cm, outer=1.4cm, top=1.6cm, bottom=1.4cm]{geometry} }{}
     \ifthenelse{\equal{\papertype}{science}}  {	\usepackage[paperwidth=170mm, paperheight=240mm, inner=1.8cm, outer=1.6cm, top=1.6cm, bottom=1.4cm]{geometry} }{}
     \ifthenelse{\equal{\papertype}{dina4}}    {	\usepackage[paperwidth=210mm, paperheight=297mm, inner=2.1cm, outer=0.9cm, top=1.6cm, bottom=1.0cm]{geometry} }{}
-    \geometry{dvips=false,pdftex=false,vtex=false, marginparsep=0mm} %, showframe}
+    \geometry{dvips=false,pdftex=false,vtex=false, marginparsep=0mm}
     \ifthenelse{\equal{\papertype}{dina5}}    {	\usepackage[frame, center, width=154mm, height=216mm]{crop} }{}
     \ifthenelse{\equal{\papertype}{science}}  {	\usepackage[frame, center, width=176mm, height=246mm]{crop} }{}
     \ifthenelse{\equal{\papertype}{dina4}}    {	\usepackage[frame, center, width=216mm, height=303mm]{crop} }{}
@@ -34,5 +34,5 @@
     \ifthenelse{\equal{\papertype}{dina5}}    {	\usepackage[paperwidth=148mm, paperheight=210mm, inner=1.6cm, outer=1.4cm, top=1.6cm, bottom=1.4cm]{geometry} }{}
     \ifthenelse{\equal{\papertype}{science}}  {	\usepackage[paperwidth=170mm, paperheight=240mm, inner=1.8cm, outer=1.6cm, top=1.6cm, bottom=1.4cm]{geometry} }{}
     \ifthenelse{\equal{\papertype}{dina4}}    {	\usepackage[paperwidth=210mm, paperheight=297mm, inner=2.1cm, outer=0.9cm, top=1.6cm, bottom=1.0cm]{geometry} }{}
-    \geometry{dvips=false,pdftex=false,vtex=false, marginparsep=0mm} %, showframe}
+    \geometry{dvips=false,pdftex=false,vtex=false, marginparsep=0mm}
 }{}

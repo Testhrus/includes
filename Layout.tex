@@ -4,6 +4,7 @@
 
 \providecommand{\papertype}{dina5}
 \providecommand{\chapterword}{\iflanguage{german}{\Numstring{chapter}}{\iflanguage{ngerman}{\Numstring{chapter}}{\Numberstring{chapter}}}}
+\providecommand{\fictiontype}{}
 
 \KOMAoption{chapterprefix}{true}
 \renewcommand*\raggedchapter{\centering}
@@ -40,7 +41,7 @@
 % Wo stehen Seitenzahlen und andere Markierungen auf der Seite
 \ohead{\pagemark} % Seitenzahlen oben außen
 \ofoot{} % nichts unten außen
-\cehead{Harry Potter} % bei geraden Seiten in der Mitte diesen Text schreiben
+\cehead{\fictiontype} % bei geraden Seiten in der Mitte diesen Text schreiben
 \cohead{\leftmark} % bei ungeraden Seiten in der Mitte Kapitelname
 
 %\ihead{ihead}
