@@ -1,5 +1,6 @@
 % Abkürzungen
 \providecommand{\skipspace}{\vskip \lineskip}
+\providecommand{\onelineback}{\vspace{-\baselineskip}} % Anderenfalls werden 2 Leerzeilen gesetzt
 
 \newcommand{\abk}[1]{#1\xdot}
 \DeclareRobustCommand\xdot{\futurelet\token\Xdot}
@@ -43,6 +44,7 @@
 \xspaceaddexceptions{\grqq \grq \csq@qclose@i « << } % zu ignorierende Zeichen
 \makeatother
 
+\newcommand{\fskdivider}{\begin{center}$\sim$ prickelnde Erotik $\sim$\end{center}}
 \newcommand{\trenn}{\skipspace\begin{center}• • • • •\end{center}\skipspace}
 \newcommand{\ooo}{\begin{center}$\sim$o0o$\sim$\end{center}}
 
