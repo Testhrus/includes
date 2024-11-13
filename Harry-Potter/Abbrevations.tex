@@ -1,16 +1,6 @@
 % Harry Potter Abkürzungen
 
 % Links und Rechts vom Rand einrücken und kein Blocksatz
-% \newenvironment{brief}     {\skipspace\vspace{\baselineskip}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft} \itshape}
-%     {\end{FlushLeft}\end{addmargin}\skipspace\vspace{\baselineskip}}
-% \newenvironment{buch}      {\skipspace\vspace{\baselineskip}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft} \itshape}
-%     {\end{FlushLeft}\end{addmargin}\skipspace\vspace{\baselineskip}}
-% \newenvironment{lied}      {\skipspace\vspace{\baselineskip}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft} \itshape}
-%     {\end{FlushLeft}\end{addmargin}\skipspace\vspace{\baselineskip}}
-
-% \newenvironment{traum}     {\skipspace\vspace{\baselineskip}\itshape}{\vspace{\baselineskip}\skipspace}
-% \newenvironment{rueckblick}{\skipspace\vspace{\baselineskip}\itshape}{\vspace{\baselineskip}\skipspace}
-
 \newenvironment{brief}     {\vspace{\baselineskip}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft}\itshape}
                                 {\end{FlushLeft}\end{addmargin}\skipspace\vspace{\baselineskip}}
 \newenvironment{buch}      {\vspace{\baselineskip}\begin{addmargin}[1.5em]{1.5em}\begin{FlushLeft}\itshape}
@@ -29,21 +19,16 @@
 \newcommand{\addressingspace}{\\ \\} % Achtung! Alt+255
 \newcommand{\signumspace}{\\ \\} % Achtung! Alt+255
 
-\newcommand{\fahrendeRitter}{\textit{Fahrende Ritter}}
-\newcommand{\fahrenderRitter}{\textit{Fahrender Ritter}}
-\newcommand{\fahrendenRitter}{\textit{Fahrenden Ritter}}
-
 \newcommand{\gleis}{9~\nicefrac{3}{4}\xspace}
 \newcommand{\neundreiviertel}{9~\nicefrac{3}{4}\xspace}
-%\newcommand{\timeline}            [1]{\begin{center}\textit{#1}\end{center}\skipspace}
+
 \newcommand{\kapitelvorwort}      [1]{\skipspace\begin{center}\footnotesize\textit{#1}\end{center}\skipspace}
-%\newcommand{\centerblock}         [1]{\skipspace\begin{center}\textsc{#1}\end{center}\skipspace}
+
 \newcommand{\note}                [1]{\textit{#1}}
 \newcommand{\parsel}              [1]{\textit{>>#1<<\xspace}}
 \newcommand{\koboldgack}          [1]{\textit{‛#1’\xspace}}
 \newcommand{\meerisch}            [1]{\textit{<<#1>>\xspace}}
 \newcommand{\mensch}[1]{} % do nothing here, because of another command for output in an other language. This here is for transformation in Html with own tool
-%\newcommand{\einfluss}            [1]{\enquote{\textsc{#1}}}
 \newcommand{\muenze}              [1]{‚#1{}‘}
 \newcommand{\fach}                [1]{\textit{#1}}
 \newcommand{\buchtitel}           [1]{\textit{#1}}
